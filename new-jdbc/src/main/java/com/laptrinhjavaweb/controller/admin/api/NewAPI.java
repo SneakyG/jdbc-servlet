@@ -31,6 +31,8 @@ public class NewAPI extends HttpServlet {
 		resp.setContentType("application/json");
 		// Nhâòn data(json) tıÌ Client vaÌ convert thaÌnh String
 		NewModel newModel = HttpUtil.of(req.getReader()).toModel(NewModel.class);
+		// do getValue trong SessionUtil traÒ vêÌ Object ko côì ğiònh nên cast vêÌ Object(UserModel,...) coì data câÌn lâìy(õÒ ğây
+		// câÌn lâìy Username trong UserModel)
 		newModel.setCreatedBy(((UserModel) SessionUtil.getInstance().getValue(req, "USERMODEL")).getUserName());
 		// bind String json vaÌo model võìi caìc field tıõng ıìng vaÌ gaìn vaÌo model
 		newModel = newService.save(newModel);

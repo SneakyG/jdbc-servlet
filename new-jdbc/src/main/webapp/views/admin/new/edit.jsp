@@ -150,7 +150,7 @@
                 // server gửi lại cho client type json
                 dataType: 'json',
                 success: function (result) {
-                    window.location.href = "${Newurl}?type=list&maxPageItem=2&page=1";
+                	window.location.href = "${Newurl}?type=list&page=1&maxPageItem=2&sortName=title&sortBy=desc";
                 },
                 error: function (error) {
                     console.log(error);
@@ -166,7 +166,7 @@
                 data: JSON.stringify(data),
                 dataType: 'json',
                 success: function (result) {
-                    window.location.href = "${Newurl}?type=list&maxPageItem=2&page=1";
+                	window.location.href = "${Newurl}?type=list&page=1&maxPageItem=2&sortName=title&sortBy=desc";
                 },
                 error: function (error) {
                     console.log(error);
